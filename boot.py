@@ -1,18 +1,8 @@
-import network
-import esp
+# non-blank boot.py
 
-def connect():
-    # this can be run from the REPL as well
-    esp.osdebug(None)   # kill all on start
-
-    network.WLAN(network.STA_IF).active(False)
-    network.WLAN(network.AP_IF).active(False)
-    sta_if = network.WLAN(network.STA_IF)
-    if not sta_if.isconnected():
-        print('connecting to network...')
-        sta_if.active(True)
-        sta_if.config(dhcp_hostname='ESP8266_1')
-        sta_if.connect('gopats', '15courthouselane')
-        while not sta_if.isconnected():
-            pass
-    print('network config:', sta_if.ifconfig())
+# connect to network
+import net2
+if net2.wlan_connect('gopats','15courthouselane'):
+    print('network connection SUCCESS')
+else:
+    print('network connection FAILURE')

@@ -2,9 +2,9 @@ import picoweb
 
 app = picoweb.WebApp(__name__)
 
-@app.route("/")
+@app.route('/')
 def index(req, resp):
     yield from picoweb.start_response(resp)
-    yield from resp.awrite("Hello world from picoweb running on the ESP32")
+    yield from resp.awrite('Hello world from picoweb running on the ESP32')
 
-app.run(debug=True, host = "ESP8266_1")
+app.run(debug=True, host='especial_1')
