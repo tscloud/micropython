@@ -7,11 +7,15 @@
     <th>timestamp</th>
   </tr>
   <tr>
-    <td>{{sensor['tmpr']}}</td>
+    <td>{{sensor['temp']}}</td>
     <td>11:00</td>
   </tr>
   <tr>
-    <td>{{sensor['hmdty']}}</td>
+    <td>{{sensor['humidity']}}</td>
+    <td>09:00</td>
+  </tr>
+  <tr>
+    <td>{{sensor['pressure']}}</td>
     <td>09:00</td>
   </tr>
 </table>
