@@ -1,6 +1,7 @@
 import picoweb
 
-app = picoweb.WebApp(__name__)
+#app = picoweb.WebApp(__name__)
+app = picoweb.WebApp(None)
 
 @app.route('/')
 def index(req, resp):
@@ -14,8 +15,8 @@ def index(req, resp):
 
     }
     #yield from picoweb.start_response(resp)
-    yield from picoweb.start_response(resp, content_type = "text/html")
+    yield from picoweb.start_response(resp, content_type = 'text/html')
     #yield from resp.awrite('Hello world from picoweb running on the ESP32')
-    yield from app.render_template(resp, "sensor.tpl", (templateData,))
+    yield from app.render_template(resp, 'sensor.tpl', (templateData,))
 
 app.run(debug=True, host='especial_1')
